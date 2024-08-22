@@ -16,9 +16,8 @@ const ChatAreaEvents = ({
         {messageEvents.map((message, i) => (
           <div
             key={i}
-            className={`w-1/2 border-2 p-2 mt-2 overflow-auto rounded-md bg-primary text-secondary ${
-              message.startsWith(user.id.toString()) &&
-              "bg-secondary text-gray-800"
+            className={`w-1/2 border-2 p-2 mt-2 overflow-auto rounded-md bg-primary ${
+              message.startsWith(user.id.toString()) && "bg-secondary "
             }`}
           >
             <p>{message}</p>
