@@ -18,7 +18,7 @@ const ChatAreaEvents = ({
             key={i}
             className={`w-1/2 border-2 p-2 mt-2 overflow-auto rounded-md bg-primary text-secondary ${
               message.startsWith(user.id.toString()) &&
-              "bg-secondary text-black"
+              "bg-secondary text-gray-800"
             }`}
           >
             <p>{message}</p>
