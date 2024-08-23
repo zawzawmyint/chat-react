@@ -21,7 +21,7 @@ export function useSocket(userId: string, currentUserId: string | undefined) {
       (id === currentUserId && senderId === userId)
     ) {
       console.log(`${id}: ${msg}`);
-      const message = senderId + "--->" + msg;
+      const message = senderId + "_" + msg;
       setUserMessages((previous) => [...previous, message]);
     }
   }

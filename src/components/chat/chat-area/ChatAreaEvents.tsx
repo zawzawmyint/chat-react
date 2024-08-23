@@ -15,12 +15,24 @@ const ChatAreaEvents = ({
       <ScrollAreaBox className="h-[420px]">
         {messageEvents.map((message, i) => (
           <div
-            key={i}
-            className={`w-1/2 border-2 p-2 mt-2 overflow-auto rounded-md bg-primary ${
-              message.startsWith(user.id.toString()) && "bg-secondary "
+            className={` ${
+              !message.startsWith(user.id.toString()) && " flex justify-end"
             }`}
           >
-            <p>{message}</p>
+            <p
+              key={i}
+              className={`w-1/2 border-2 p-2 mt-2 overflow-auto rounded-md bg-primary ${
+                message.startsWith(user.id.toString()) && "bg-secondary "
+              }`}
+            >
+              <p
+                className={` ${
+                  !message.startsWith(user.id.toString()) && " flex justify-end"
+                }`}
+              >
+                {message.split("_").at(1)}
+              </p>
+            </p>
           </div>
         ))}
       </ScrollAreaBox>
