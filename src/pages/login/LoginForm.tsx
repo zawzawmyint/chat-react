@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 interface LoginFormProps {}
 
-const baseUrl = "https://chat-express-pyh4.onrender.com";
+const baseUrl = import.meta.env.VITE_API_BASE_UR;
 
 const LoginForm: React.FC<LoginFormProps> = () => {
   const [userName, setUserName] = useState<string>("cuzawzawmyint");

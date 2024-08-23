@@ -5,8 +5,7 @@ import { ChatInfoSide } from "@/components/chat/ChatInfoSide";
 import { User } from "@/lib/definations";
 import { useNavigate } from "react-router-dom";
 
-const baseUrl = "https://chat-express-pyh4.onrender.com";
-// const baseUrl = "http://localhost:4000" || process.env.REACT_APP_BASE_URL;
+const baseUrl = import.meta.env.VITE_API_BASE_UR;
 const Chat = () => {
   const [selectedUser, setSelectedUser] = useState<User | null>(null);
   const [users, setUsers] = useState<User[]>([]);
