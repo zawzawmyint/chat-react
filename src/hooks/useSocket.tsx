@@ -26,22 +26,27 @@ export function useSocket(userId: string, currentUserId: string | undefined) {
     }
   }
 
+  const greetEvent = (msg: string) => {
+    const message = userId + "_" + msg;
+    setUserMessages((previous) => [...previous, message]);
+  };
+
+  function onConnect() {
+    console.log("Connected to the server");
+    setIsConnected(true);
+
+    // Join room for the current user
+    // if (currentUserId) {
+    //   socket.emit("joinRoom", currentUserId);
+    // }
+  }
+
+  function onDisconnect() {
+    console.log("Disconnected from the server");
+    setIsConnected(false);
+  }
+
   useEffect(() => {
-    function onConnect() {
-      console.log("Connected to the server");
-      setIsConnected(true);
-
-      // Join room for the current user
-      // if (currentUserId) {
-      //   socket.emit("joinRoom", currentUserId);
-      // }
-    }
-
-    function onDisconnect() {
-      console.log("Disconnected from the server");
-      setIsConnected(false);
-    }
-
     if (!socket.connected) {
       console.log("Connecting socket...");
       socket.connect();
@@ -56,12 +61,14 @@ export function useSocket(userId: string, currentUserId: string | undefined) {
     console.log("Setting up socket listeners");
     socket.on("connect", onConnect);
     socket.on("disconnect", onDisconnect);
+    socket.on("greet", greetEvent);
     socket.on("message", onMessageEvent);
 
     return () => {
       console.log("Cleaning up socket listeners");
       socket.off("connect", onConnect);
       socket.off("disconnect", onDisconnect);
+      socket.off("greet", greetEvent);
       socket.off("message", onMessageEvent);
     };
   }, [userId, currentUserId]);

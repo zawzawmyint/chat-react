@@ -26,14 +26,20 @@ export function ChatAreaForm({
       msg: value,
     };
 
-    socket.timeout(5000).emit("message", messageData, (err: Error) => {
-      if (err) {
-        console.error("Failed to send message:", err);
-        // Optionally display error to the user
-      }
-      setValue("");
-      setIsLoading(false);
-    });
+    socket
+      .timeout(3000)
+      .emit("message", messageData, (err: Error, response: Response) => {
+        // emit(event, messageData, (error, response) => error or response),
+        // error for setTimeout, response acknowledge
+        if (err) {
+          console.error("Failed to send message:", err);
+          // Optionally display error to the user
+        } else {
+          console.log("response status: ", response.status);
+        }
+        setValue("");
+        setIsLoading(false);
+      });
   }
 
   return (

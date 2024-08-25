@@ -12,9 +12,11 @@ const LandLeft = () => {
         </div>
         <div>
           <CardDescription className="w-5/6">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga,
-            magni! Quia sapiente, maiores ipsa, non doloremque possimus officiis
-            sint, eos laudantium ut itaque voluptatum sequi deleniti!
+            Stay connected with your friends in real time! Our platform lets you
+            chat, share updates, and keep up with each other instantly, no
+            matter where you are. Whether it's a quick message or a detailed
+            conversation, our service ensures you're always in touch,
+            effortlessly and seamlessly.
           </CardDescription>
         </div>
         <div>

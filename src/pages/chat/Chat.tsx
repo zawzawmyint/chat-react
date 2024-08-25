@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { ChatArea } from "@/components/chat/chat-area/ChatArea";
 import { ChatUserSide } from "@/components/chat/chat-user-side/ChatUserSide";
-import { ChatInfoSide } from "@/components/chat/ChatInfoSide";
+
 import { User } from "@/lib/definations";
 import { useNavigate } from "react-router-dom";
+import { ChatInfoSide } from "@/components/chat/chatInfoSide/ChatInfoSide";
 
 const baseUrl = import.meta.env.VITE_API_BASE_UR;
 const Chat = () => {
