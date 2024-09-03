@@ -127,7 +127,7 @@ export function VideoDialog({ currentUser, user }: VideoDialogProps) {
           <VideoCall
             otherUser={user}
             callPeer={callPeer}
-            peerInstance={peerInstance}
+            // peerInstance={peerInstance}
             currentVideoRef={currentVideoRef}
             remoteVideoRef={remoteVideoRef}
             isCallActive={isCallActive}

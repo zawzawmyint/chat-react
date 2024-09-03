@@ -1,13 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { DialogClose } from "@/components/ui/dialog";
 import { User } from "@/lib/definations";
-import Peer from "peerjs";
 import { forwardRef, MutableRefObject } from "react";
 
 interface VideoCallProps {
   otherUser: User;
   callPeer: (remotePeerId: string) => void;
-  peerInstance: MutableRefObject<Peer | null>;
+  // peerInstance: MutableRefObject<Peer | null>;
   currentVideoRef: MutableRefObject<HTMLVideoElement | null>;
   remoteVideoRef: MutableRefObject<HTMLVideoElement | null>;
   isCallActive: boolean;
@@ -19,7 +18,6 @@ const VideoCall = forwardRef<HTMLDivElement, VideoCallProps>(
     {
       otherUser,
       callPeer,
-      peerInstance,
       currentVideoRef,
       remoteVideoRef,
       isCallActive,
