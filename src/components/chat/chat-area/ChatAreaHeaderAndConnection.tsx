@@ -1,15 +1,18 @@
 import { Button } from "@/components/ui/button";
 import { CardHeader } from "@/components/ui/card";
 import { User } from "@/lib/definations";
-import { PhoneCall, VideoIcon } from "lucide-react";
+import { PhoneCall } from "lucide-react";
 import ProfileAndName from "../chat-user-side/ProfileAndName";
 import { MobileChatInfoSide } from "../chatInfoSide/mobileInfoSide/MobileChatInfoSide";
+import { VideoDialog } from "../video-call/VideoDialog";
 
 export function ChatAreaHeaderAndConnection({
+  currentUser,
   isConnected,
   user,
 }: {
-  isConnected: boolean;
+  currentUser: User | null;
+  isConnected?: boolean;
   user: User;
 }) {
   return (
@@ -18,9 +21,7 @@ export function ChatAreaHeaderAndConnection({
         <ProfileAndName user={user} />
         <div className="flex items-center gap-2">
           <p className="text-green-400">{isConnected && "Online"}</p>
-          <Button variant={"ghost"} size={"icon"}>
-            <VideoIcon />
-          </Button>
+          <VideoDialog currentUser={currentUser} user={user} />
           <Button variant={"ghost"} size={"icon"}>
             <PhoneCall />
           </Button>

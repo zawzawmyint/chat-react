@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { useToast } from "@/components/ui/use-toast";
 import { FormEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -11,6 +12,8 @@ const LoginForm: React.FC<LoginFormProps> = () => {
   const [userName, setUserName] = useState<string>("cuzawzawmyint");
   const [password, setPassword] = useState<string>("111111");
   const [error, setError] = useState<string | null>(null);
+
+  const { toast } = useToast();
 
   const navigate = useNavigate();
 
@@ -28,7 +31,11 @@ const LoginForm: React.FC<LoginFormProps> = () => {
 
       if (response.ok) {
         // Handle successful login (e.g., redirect, show message)
-        alert("Login successful");
+        // alert("Login successful");
+        toast({
+          title: "Successful: Login in",
+          description: "Enjoy with your friends",
+        });
         navigate("/");
         localStorage.setItem("currentUser", JSON.stringify(userName));
       } else {

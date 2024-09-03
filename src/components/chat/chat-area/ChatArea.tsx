@@ -20,7 +20,11 @@ export function ChatArea({
 
   return (
     <Card className={cn("sm:basis-3/5")}>
-      <ChatAreaHeaderAndConnection user={user} isConnected={isConnected} />
+      <ChatAreaHeaderAndConnection
+        currentUser={currentUser}
+        user={user}
+        isConnected={isConnected}
+      />
       <ChatAreaEvents user={user} messageEvents={userMessages} />
       <ChatAreaForm user={user} currentUser={currentUser} />
     </Card>

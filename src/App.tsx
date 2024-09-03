@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css";
 
 import NoMatch from "./components/global/NoMatch";
+import { Toaster } from "./components/ui/toaster";
 
 const Layout = React.lazy(() => import("./components/global/layouts/Layout"));
 const Home = React.lazy(() => import("./pages/home/Home"));
@@ -34,6 +35,7 @@ function App() {
           <Route path="*" element={<NoMatch />} />
         </Route>
       </Routes>
+      <Toaster />
     </>
   );
 }

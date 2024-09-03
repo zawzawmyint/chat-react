@@ -31,20 +31,16 @@ export function NavLinks() {
 
   return (
     <NavigationMenu>
-      <NavigationMenuList className="space-x-3">
+      <NavigationMenuList className="space-x-5">
         <NavigationMenuItem>
-          <Link to="/">
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Home
-            </NavigationMenuLink>
-          </Link>
+          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+            <Link to="/">Home</Link>
+          </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link to="/chat">
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Chat
-            </NavigationMenuLink>
-          </Link>
+          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+            <Link to="/chat">Chat</Link>
+          </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
           {currentUserName ? (
@@ -54,11 +50,9 @@ export function NavLinks() {
               </NavigationMenuLink>
             </div>
           ) : (
-            <Link to="/login">
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                Login
-              </NavigationMenuLink>
-            </Link>
+            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+              <Link to="/login">Login</Link>
+            </NavigationMenuLink>
           )}
         </NavigationMenuItem>
       </NavigationMenuList>
