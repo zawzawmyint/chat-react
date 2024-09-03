@@ -4,7 +4,7 @@ import { User } from "@/lib/definations";
 import { PhoneCall } from "lucide-react";
 import ProfileAndName from "../chat-user-side/ProfileAndName";
 import { MobileChatInfoSide } from "../chatInfoSide/mobileInfoSide/MobileChatInfoSide";
-import { VideoDialog } from "../video-call/VideoDialog";
+import VideoDialog from "../video-call/VideoDialog";
 
 export function ChatAreaHeaderAndConnection({
   currentUser,
