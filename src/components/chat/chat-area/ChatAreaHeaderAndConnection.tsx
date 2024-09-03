@@ -21,6 +21,7 @@ export function ChatAreaHeaderAndConnection({
         <ProfileAndName user={user} />
         <div className="flex items-center gap-2">
           <p className="text-green-400">{isConnected && "Online"}</p>
+          {/* video dialog  */}
           <VideoDialog currentUser={currentUser} user={user} />
           <Button variant={"ghost"} size={"icon"}>
             <PhoneCall />
